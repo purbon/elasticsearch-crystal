@@ -1,0 +1,11 @@
+name: example
+version: 0.1.0
+
+authors:
+  - Pere Urbon-Bayes <pere.urbon@gmail.com>
+
+dependencies:
+  elasticsearch-crystal:
+    github: purbon/elasticsearch-crystal
+
+license: MIT
