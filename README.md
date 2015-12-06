@@ -1,7 +1,7 @@
 # elasticsearch-crystal
 
-## Work in Progress, this aims to be a general client to elasticsearch
-## for crystal-lang, the programming language.
+## Work in Progress
+this aims to be a general client to elasticsearch for crystal-lang, the programming language.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   elasticsearch-crystal:
-    github: exit/elasticsearch-crystal
+    github: purbon/elasticsearch-crystal
 ```
 
 
