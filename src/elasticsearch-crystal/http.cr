@@ -4,16 +4,12 @@ require "json"
 module Elasticsearch
   class HTTPClient
 
-    getter :namespace
-    setter :namespace
-
     def initialize(host, port)
       @client    = HTTP::Client.new(host, port)
-      @namespace = ""
     end
 
-    def get(command)
-      request = request("get", "#{namespace}/#{command}", nil, nil)
+    def get(url, body=nil)
+      request = request("get", url, nil, body)
       yield request.body
     end
 
