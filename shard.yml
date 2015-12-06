@@ -1,0 +1,7 @@
+name: elasticsearch-crystal
+version: 0.1.0
+
+authors:
+  - Pere Urbon-Bayes <pere.urbon@gmail.com>
+
+license: MIT
