@@ -1,6 +1,7 @@
 # elasticsearch-crystal
 
-TODO: Write a description here
+## Work in Progress, this aims to be a general client to elasticsearch
+## for crystal-lang, the programming language.
 
 ## Installation
 
