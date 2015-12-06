@@ -1,6 +1,5 @@
 module Elasticsearch::API::Cat
 
-
   def indices
     @client.get("_cat/indices") do |body|
       data = {} of String => Array(String)
