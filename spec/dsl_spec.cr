@@ -5,7 +5,7 @@ describe Elasticsearch::DSL do
   context "match query" do
 
     it "generate proper json" do
-      expected =  "{\"match\":{\"field\":\"message\",\"query\":\"this is a test\",\"operator\":\"and\"}}"
+      expected =  "{\"match\":{\"message\":{\"query\":\"this is a test\",\"operator\":\"and\"}}}"
       query = SearchStub.new.search do |query|
         query.match do |match|
           match.field = "message"
