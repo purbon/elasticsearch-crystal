@@ -9,8 +9,7 @@ module Elasticsearch::DSL
   end
 
   class Query
-    setter :match
-    getter :match
+    getter :match, :multi_match
 
     def match
       match = Match.new
@@ -19,9 +18,37 @@ module Elasticsearch::DSL
       self
     end
 
+    def multi_match
+      match = MultiMatch.new
+      yield match
+      @multi_match = match
+      self
+    end
+
     def to_json(io)
       io.json_object do |object|
-        object.field "match",  match
+        object.field "match",  match if match
+        object.field "multi_match", multi_match if multi_match
+      end
+    end
+  end
+
+  class MultiMatch
+    setter :query, :type, :fields, :operator
+    getter :query, :type, :fields, :operator
+
+    def to_json(io)
+      io.json_object do |object|
+        object.field "query", query
+        object.field "type", type
+        object.field "fields" do
+          io.json_array do |array|
+            fields.each do |field|
+              array << field
+            end
+          end
+        end
+        object.field "operator", operator
       end
     end
   end
