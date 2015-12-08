@@ -27,8 +27,8 @@ module Elasticsearch::DSL
   end
 
   class Match
-    setter :field, :query, :operator, :zero_terms_query, :cutoff_frequency
-    getter :field, :query, :operator, :zero_terms_query, :cutoff_frequency
+    setter :field, :query, :operator, :zero_terms_query, :cutoff_frequency, :type
+    getter :field, :query, :operator, :zero_terms_query, :cutoff_frequency, :type
 
     def to_json(io)
       io.json_object do |object|
@@ -36,6 +36,7 @@ module Elasticsearch::DSL
           io.json_object do |field_object|
             field_object.field "query",  query
             field_object.field "operator",  operator                 if operator
+            field_object.field "type",  type                         if type
             field_object.field "zero_terms_query",  zero_terms_query if zero_terms_query
             field_object.field "cutoff_frequency",  cutoff_frequency if cutoff_frequency
           end
