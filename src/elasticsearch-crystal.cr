@@ -1,5 +1,4 @@
 require "./elasticsearch-crystal/*"
-require "./elasticsearch-crystal/dsl/*"
 
 module Elasticsearch
   class Client
