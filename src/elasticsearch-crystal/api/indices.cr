@@ -1,8 +1,8 @@
 module Elasticsearch::API::Indices
 
-  def mapping(index)
+  def mapping(index) : Hash
     @client.get("#{index}/_mapping") do |body|
-      JSON.parse(body) as Hash
+      JSON.parse(body).as_h
     end
   end
 end
